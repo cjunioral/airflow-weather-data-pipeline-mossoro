@@ -1,28 +1,9 @@
-# Python
+venv/
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-
-# Virtual environment
-venv/
-.env
-
-# Airflow
-airflow.db
-logs/
-airflow.cfg
-
-# Dados gerados
 data/raw/
 data/processed/
-
-# Sistema
-.DS_Store
-Thumbs.db
-
-# VS Code
+logs/
+airflow.db
+.env
 .vscode/
-
-# Jupyter
-.ipynb_checkpoints/
