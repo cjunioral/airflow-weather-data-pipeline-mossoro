@@ -1,0 +1,4 @@
+apache-airflow==2.9.0 
+pandas==2.3.3 
+numpy==2.2.6 
+requests==2.32.3
