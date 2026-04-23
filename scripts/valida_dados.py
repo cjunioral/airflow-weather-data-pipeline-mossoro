@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from datetime import datetime
 
-PASTA_PROCESSED = '/root/Documents/datapipeline/data/processed'
+PASTA_PROCESSED = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'processed')
 
 def validar_dados():
     hoje = datetime.today().strftime('%Y-%m-%d')

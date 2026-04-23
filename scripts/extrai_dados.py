@@ -1,6 +1,9 @@
 import os
 import pandas as pd
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def extrair_dados():
 
@@ -12,7 +15,7 @@ def extrair_dados():
     data_fim = data_fim.strftime('%Y-%m-%d')
 
     city = 'Mossoro'
-    key = '467JQJ935X3KDX53ABDS2RXJ9'
+    key = os.getenv('VISUAL_CROSSING_KEY')
 
     url = (f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'
         f'{city}/{data_inicio}/{data_fim}?unitGroup=metric&include=days&key={key}&contentType=csv')
@@ -24,7 +27,7 @@ def extrair_dados():
     
     print(dados.head())
 
-    pasta_raw = f'/root/Documents/datapipeline/data/raw'
+    pasta_raw = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'raw')
     os.makedirs(pasta_raw, exist_ok=True)
     
     nome_arquivo = f'clima_mossoro_raw_{data_inicio}.csv'

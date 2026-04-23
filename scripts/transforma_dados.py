@@ -3,8 +3,8 @@ import pandas as pd
 from datetime import datetime
 
 
-PASTA_RAW = '/root/Documents/datapipeline/data/raw'
-PASTA_PROCESSED = '/root/Documents/datapipeline/data/processed'
+PASTA_RAW = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'raw')
+PASTA_PROCESSED = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'processed')
 
 
 def transformar_dados():
